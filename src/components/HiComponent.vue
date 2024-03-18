@@ -10,10 +10,12 @@ function clickMe(){
 const data=ref("InputData")
 </script>
 <template>
-    <h1>This is Hi</h1>
-    <h1>I'm{{myTitle}}{{title}}</h1>
-    <h1 @click="clickMe">EMIT DATA</h1>
-    <input v-model="data" @change="clickMe">
-    <p>{{ fromFather }}</p>
-    <h1>This is Hi</h1>
+    <div>
+        <h1>This is Hi</h1>
+        <h1>I'm{{props.myTitle}}{{props.title}}</h1>
+        <h1 @click="clickMe">EMIT DATA</h1>
+        <input v-model="data">
+        <p>{{ fromFather }}</p>
+        <h1>This is Hi</h1>
+    </div>
 </template>

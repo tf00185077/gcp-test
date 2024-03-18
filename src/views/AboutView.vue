@@ -1,8 +1,8 @@
 <script setup>
-import { ref, nextTick, reactive, computed, watch, inject,provide } from 'vue'
+import { ref, watch, inject,provide } from 'vue'
 import { RouterLink } from 'vue-router';
-import Hi from '../components/Hi.vue'
-const message = ref("")
+import hi from '../components/HiComponent.vue'
+const message = ref("hello world")
 const provideSome = inject('imProvider')
 watch(provide,()=>{
   console.log(provideSome.value)
@@ -14,8 +14,7 @@ provide("toHi","HI IM FROM ABOUT")
     <h1 class="green">This is an about page</h1>
     <a href="/">TEST GREEN OR NOT</a>
     <p>Message is: {{ message }}</p>
-    <button @click="provide++">Click Me</button>
-    <Hi></Hi>
+    <hi myTitle="my-title" title="title" id="123"></hi>
     <RouterLink to="/">TO HOME</RouterLink>
   </div>
 </template>
@@ -39,4 +38,4 @@ provide("toHi","HI IM FROM ABOUT")
     justify-content: center;
   }
 }
-</style>
+</style>../components/hi.vue../components/HiComponent.vue
