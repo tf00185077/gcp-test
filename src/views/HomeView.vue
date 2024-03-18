@@ -1,5 +1,5 @@
 <script setup>
-import Child from './Child.vue'
+import Child from './ChildComponent.vue'
 import { ref } from 'vue'
 
 const msg = ref('Hello World!')

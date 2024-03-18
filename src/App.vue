@@ -12,7 +12,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
       <nav>
         <RouterLink to="/">HASDASdome</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">GCP Test</RouterLink>
       </nav>
     </div>
   </header>
