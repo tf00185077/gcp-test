@@ -8,7 +8,7 @@ import router from './router'
 import Hi from './components/Hi.vue'
 const app = createApp(App)
 app.component(
-    'Hi',Hi
+    Hi
 )
 const ppp = ref(100)
 app.provide('imProvider',ppp)
