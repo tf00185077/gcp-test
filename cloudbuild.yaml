@@ -10,7 +10,13 @@ steps:
   # 部署專案（依照你的需求調整，例如使用 Firebase 或 GCP 的其他服務）
   # 這裡以將建置好的檔案上傳到 Google Cloud Storage 為例
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['cp', '-r', 'dist/*', 'gs://YOUR_BUCKET_NAME/']
+    args:
+      [
+        'cp',
+        '-r',
+        'dist/*',
+        'gs://asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test/'
+      ]
 # 可選：設定觸發器，根據 GitHub 或 Google Cloud Source Repositories 的變動自動執行此檔案
 # triggers:
 #   - name: 'Trigger Name'
