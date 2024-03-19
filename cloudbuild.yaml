@@ -1,22 +1,20 @@
 steps:
   # 安裝依賴
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcp-test', '.']
 
-  # 建置專案
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'build']
-
-  # 部署專案（依照你的需求調整，例如使用 Firebase 或 GCP 的其他服務）
-  # 這裡以將建置好的檔案上傳到 Google Cloud Storage 為例
-  - name: 'gcr.io/cloud-builders/gsutil'
+  # 标记 Docker 镜像
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
-        'cp',
-        '-r',
-        'dist/*',
-        'gs://asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test/'
+        'tag',
+        'gcp-test',
+        'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test'
       ]
+
+  # 推送 Docker 镜像到容器注册表
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test']
 # 可選：設定觸發器，根據 GitHub 或 Google Cloud Source Repositories 的變動自動執行此檔案
 # triggers:
 #   - name: 'Trigger Name'
