@@ -18,7 +18,7 @@ steps:
         'deploy',
         'gcp-test', # 替换为您的服务名称
         '--image',
-        'asia-east1-docker.pkg.dev/bionic-store-417406/gcp-test',
+        'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test',
         '--platform',
         'managed',
         '--region',
