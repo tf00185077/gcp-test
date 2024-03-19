@@ -2,7 +2,8 @@ FROM node:16 as build
 WORKDIR /app
 COPY package*.json .
 RUN npm install
-COPY . .
+# COPY . .
+COPY . /app/
 RUN npm run build
 # FROM nginx:1.19
 # COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
