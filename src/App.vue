@@ -9,7 +9,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div>
       <HelloWorld msg="You did it!" />
-      <h1>Hello Pipeline auto test again</h1>
+      <h1>Hello Pipeline auto test again, and i fix this twice</h1>
       <nav>
         <RouterLink to="/">HASDASdome</RouterLink>
         <RouterLink to="/about">GCP Test</RouterLink>
