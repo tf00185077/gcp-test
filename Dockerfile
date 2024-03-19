@@ -12,7 +12,7 @@ RUN npm run build
 # 使用官方的 Nginx 映像作為基礎映像
 FROM nginx:latest
 # 複製本地的 nginx.conf 文件到容器中的 /etc/nginx 目錄下
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY /nginx/nginx.conf /etc/nginx/nginx.conf
 
 # 複製本地的靜態文件到容器中的 /usr/share/nginx/html 目錄下
 COPY --from=build /app/dist /usr/share/nginx/html
