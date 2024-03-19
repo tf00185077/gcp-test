@@ -1,14 +1,18 @@
 steps:
   # docker build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test', '.']
-
+    args:
+      [
+        'build',
+        '-t',
+        'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test',
+        '.'
+      ]
 
   # 推送 Docker 镜像到容器注册表
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test']
 
-  
   # Store images in Google Artifact Registry
-  images:
-    - asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test
+images:
+  - asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test
