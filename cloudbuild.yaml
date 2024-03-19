@@ -16,7 +16,7 @@ steps:
     args: [
         'run',
         'deploy',
-        'pipeline-test', # 替换为您的服务名称
+        'gcp-test', # 替换为您的服务名称
         '--image',
         'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test',
         '--platform',
