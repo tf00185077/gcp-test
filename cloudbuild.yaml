@@ -1,26 +1,14 @@
 steps:
-  # 安裝依賴
+  # docker build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcp-test', '.']
+    args: ['build', '-t', 'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test', '.']
 
-  # 标记 Docker 镜像
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      [
-        'tag',
-        'gcp-test',
-        'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test'
-      ]
 
   # 推送 Docker 镜像到容器注册表
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test']
-# 可選：設定觸發器，根據 GitHub 或 Google Cloud Source Repositories 的變動自動執行此檔案
-# triggers:
-#   - name: 'Trigger Name'
-#     event: 'push to branch'
-#     branch: 'main'
 
-# 可選：設定環境變數
-# substitutions:
-#   _BUCKET_NAME: 'YOUR_BUCKET_NAME'
+  
+  # Store images in Google Artifact Registry
+  images:
+    - asia-east1-docker.pkg.dev/bionic-store-417406/cloud-run-source-deploy/gcp-test
