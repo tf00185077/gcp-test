@@ -11,11 +11,8 @@ provide("toHi","HI IM FROM ABOUT")
 </script>
 <template>
   <div class="about">
-    <h1 class="green">This is an about page</h1>
-    <a href="/">TEST GREEN OR NOT</a>
-    <p>Message is: {{ message }}</p>
-    <hi myTitle="my-title" title="title" id="123"></hi>
-    <RouterLink to="/">TO HOME</RouterLink>
+    <!--  -->
+    <h1>改動會自動上線部署，可以省很多時間</h1>
   </div>
 </template>
 

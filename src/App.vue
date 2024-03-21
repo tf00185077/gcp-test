@@ -11,8 +11,8 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="You did it!" />
       <h1>Hello Pipeline auto test again, and i fix this twice</h1>
       <nav>
-        <RouterLink to="/">HASDASdome</RouterLink>
-        <RouterLink to="/about">GCP Test</RouterLink>
+        <!-- <RouterLink to="/">HASDASdome</RouterLink> -->
+        <RouterLink to="/about">Hello LTJ, press Me</RouterLink>
       </nav>
     </div>
   </header>
